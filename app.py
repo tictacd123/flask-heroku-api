@@ -14,7 +14,7 @@ app = flask.Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
-    year = int(request.args['year'])
+    year = int(request.args['date'])
     try:
         return series.loc[year]
     except KeyError:
